@@ -1,5 +1,5 @@
 $primary-color-bg: rgba(10, 132, 255, 0.1);
-$primary-color: #5c98e8;
+$primary-color: #4389e6;
 $border-color: #e1e4e8;
 
 .form-field-spacing {
@@ -56,4 +56,12 @@ $border-color: #e1e4e8;
   position: absolute;
   width: calc(100% - 30px);
   z-index: 100;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+  border-color: $border-color;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: $primary-color !important;
 }

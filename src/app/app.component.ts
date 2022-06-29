@@ -16,41 +16,136 @@ export class AppComponent {
     'Pepperoni',
     'Sausage',
   ];
-  list: string[] = ['value 01', 'value 02', 'value 03'];
-  selectedOptions: any = [];
+  list1: string[] = [
+    'value 01',
+    'value 02',
+    'value 03',
+    'value 04',
+    'value 05',
+    'value 06',
+    'value 07',
+    'value 08',
+  ];
+  list2: string[] = [
+    'value 01',
+    'value 02',
+    'value 03',
+    'value 04',
+    'value 05',
+    'value 06',
+    'value 07',
+    'value 08',
+  ];
+  list3: string[] = [
+    'value 01',
+    'value 02',
+    'value 03',
+    'value 04',
+    'value 05',
+    'value 06',
+    'value 07',
+    'value 08',
+  ];
+  selectedOptions1: any = [];
+  selectedOptions2: any = [];
+  selectedOptions3: any = [];
 
   constructor() {}
 
   ngOnInIt() {
-    this.list = this.data;
+    this.list1 = this.data;
+    this.list2 = this.data;
+    this.list3 = this.data;
   }
 
-  changeOptions(selectedItem: any) {
+  changeOptions1(selectedItem: any) {
     this.selectedChip = selectedItem;
     setTimeout(() => {
       this.selectedChip = null;
     }, 800);
     switch (selectedItem) {
       case 'shoes': {
-        this.list = ['shoes 1', 'shoes 2', 'shoes 3'];
+        this.list1 = ['shoes 1', 'shoes 2', 'shoes 3'];
         break;
       }
       case 'shirts': {
-        this.list = ['shirts 1', 'shirts 2', 'shirts 3'];
+        this.list1 = ['shirts 1', 'shirts 2', 'shirts 3'];
         break;
       }
       case 'cats': {
-        this.list = ['cat 1', 'cat 2', 'cat 3'];
+        this.list1 = ['cat 1', 'cat 2', 'cat 3'];
         break;
       }
       default: {
-        this.list.push(this.data[Math.floor(Math.random() * this.data.length)]);
+        this.list1.push(
+          this.data[Math.floor(Math.random() * this.data.length)]
+        );
         break;
       }
     }
   }
 
-  onSelectionChange(item: any) {
-    this.selectedOptions.push(item);
+  changeOptions2(selectedItem: any) {
+    this.selectedChip = selectedItem;
+    setTimeout(() => {
+      this.selectedChip = null;
+    }, 800);
+    switch (selectedItem) {
+      case 'shoes': {
+        this.list2 = ['shoes 1', 'shoes 2', 'shoes 3'];
+        break;
+      }
+      case 'shirts': {
+        this.list2 = ['shirts 1', 'shirts 2', 'shirts 3'];
+        break;
+      }
+      case 'cats': {
+        this.list2 = ['cat 1', 'cat 2', 'cat 3'];
+        break;
+      }
+      default: {
+        this.list2.push(
+          this.data[Math.floor(Math.random() * this.data.length)]
+        );
+        break;
+      }
+    }
+  }
+
+  changeOptions3(selectedItem: any) {
+    this.selectedChip = selectedItem;
+    setTimeout(() => {
+      this.selectedChip = null;
+    }, 800);
+    switch (selectedItem) {
+      case 'shoes': {
+        this.list3 = ['shoes 1', 'shoes 2', 'shoes 3'];
+        break;
+      }
+      case 'shirts': {
+        this.list3 = ['shirts 1', 'shirts 2', 'shirts 3'];
+        break;
+      }
+      case 'cats': {
+        this.list3 = ['cat 1', 'cat 2', 'cat 3'];
+        break;
+      }
+      default: {
+        this.list3.push(
+          this.data[Math.floor(Math.random() * this.data.length)]
+        );
+        break;
+      }
+    }
+  }
+
+  onSelectionChange1(item: any) {
+    this.selectedOptions1.push(item);
+  }
+  onSelectionChange2(item: any) {
+    this.selectedOptions2.push(item);
+  }
+  onSelectionChange3(item: any) {
+    this.selectedOptions3.push(item);
   }
 }
