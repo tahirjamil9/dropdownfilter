@@ -1,0 +1,22 @@
+<div class="form-field-spacing display-flex">
+  <div class="flex1">
+    <div
+      [ngClass]="{ 'dropdown-label-active': isDropdownActive }"
+      class="dropdown-label form-field display-flex align-item-center"
+      (click)="onLabelClick()"
+    >
+      <div class="flex1">Select</div>
+      <div>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </div>
+    </div>
+    <mat-select #matSelect multiple (openedChange)="onOpenedChange($event)">
+      <mat-option
+        (click)="onOptionSelect(optionItem)"
+        *ngFor="let optionItem of options"
+        class="option"
+        >{{ optionItem }}
+      </mat-option>
+    </mat-select>
+  </div>
+</div>

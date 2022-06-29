@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$border-bottom-color: #e1e4e8;
+$text-color: #24292e;
+
+.mat-select-panel .mat-optgroup-label,
+.mat-select-panel .mat-option {
+  height: 2.5em !important;
+  line-height: 2.5em !important;
+  border-bottom: 1px solid $border-bottom-color;
+  color: $text-color;
+  padding: 0px 4vh !important;
+}
+
+.mat-select-panel {
+  margin: 1.2em 1em !important;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+.mat-select-panel-wrap {
+  position: relative;
+  top: 4px;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.mat-select-trigger {
+  visibility: collapse;
+}
