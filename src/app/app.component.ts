@@ -41,21 +41,18 @@ export class AppComponent {
     },
   ];
 
-  selectedOptions1: { name: string; checked: boolean }[] = [];
-
   constructor() {}
 
   ngOnInIt() {}
 
   onSelectionChange1(value: any) {
     value.checked = !value.checked;
-    if (value.checked) {
-      this.selectedOptions1.push(value);
-    } else {
-      let index = this.selectedOptions1.findIndex(
-        (item) => item.name === value.name
-      );
-      this.selectedOptions1.splice(index, 1);
-    }
+    let index = this.list1.findIndex((item) => item.name === value.name);
+    this.list1[index].checked = value.checked;
+  }
+
+  removeItemFromList(value: any) {
+    let index = this.list1.findIndex((item) => item.name === value.name);
+    this.list1[index].checked = false;
   }
 }

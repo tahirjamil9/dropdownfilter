@@ -11,8 +11,10 @@
         >
         </app-dropdown>
         <mat-chip-list aria-label="Fish selection">
-          <ng-container *ngFor="let item of selectedOptions1">
-            <mat-chip>{{ item?.name }}</mat-chip>
+          <ng-container *ngFor="let item of list1">
+            <mat-chip *ngIf="item.checked" (click)="removeItemFromList(item)">{{
+              item?.name
+            }}</mat-chip>
           </ng-container>
         </mat-chip-list>
       </div>
