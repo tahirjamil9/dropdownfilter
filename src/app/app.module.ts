@@ -11,6 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent, DropdownComponent],
@@ -26,6 +28,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatCheckboxModule,
+    MatRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
