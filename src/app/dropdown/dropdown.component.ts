@@ -13,9 +13,10 @@ import {
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit {
-  @Input() label: any = 'dropdown';
+  @Input() label: any = 'Select';
   @Input() options: { name: string; checked: boolean }[] = [];
   @Output() selectionChange = new EventEmitter<any>();
+
   isDropdownActive = false;
 
   inside = false;
