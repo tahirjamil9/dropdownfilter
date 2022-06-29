@@ -16,9 +16,10 @@
         <div matRipple class="option-item display-flex align-item-center">
           <div class="checkbox">
             <mat-checkbox
+              [checked]="optionItem?.checked"
               (change)="onOptionSelect(optionItem)"
               class="example-margin"
-              >{{ optionItem }}</mat-checkbox
+              >{{ optionItem.name }}</mat-checkbox
             >
           </div>
         </div>

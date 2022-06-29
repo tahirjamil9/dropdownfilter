@@ -14,7 +14,7 @@ import {
 })
 export class DropdownComponent implements OnInit {
   @Input() label: any = 'dropdown';
-  @Input() options: any = [];
+  @Input() options: { name: string; checked: boolean }[] = [];
   @Output() selectionChange = new EventEmitter<any>();
   isDropdownActive = false;
 

@@ -1,32 +1,6 @@
 <div style="padding: 1vw 2vw">
   <h1>Filters</h1>
   <p>Update dropdown options based on filters we select</p>
-  <!-- <mat-chip-list aria-label="Fish selection">
-    <mat-chip
-      (click)="changeOptions('shoes')"
-      [selected]="selectedChip === 'shoes'"
-      color="primary"
-      >Shoes</mat-chip
-    >
-    <mat-chip
-      (click)="changeOptions('shirts')"
-      [selected]="selectedChip === 'shirts'"
-      color="primary"
-      >Shirts</mat-chip
-    >
-    <mat-chip
-      (click)="changeOptions('cats')"
-      [selected]="selectedChip === 'cats'"
-      color="primary"
-      >Cats</mat-chip
-    >
-    <mat-chip
-      (click)="changeOptions('random')"
-      [selected]="selectedChip === 'random'"
-      color="primary"
-      >random</mat-chip
-    >
-  </mat-chip-list> -->
 
   <div style="margin: 1vh 0">
     <div class="row">
@@ -38,31 +12,7 @@
         </app-dropdown>
         <mat-chip-list aria-label="Fish selection">
           <ng-container *ngFor="let item of selectedOptions1">
-            <mat-chip>{{ item }}</mat-chip>
-          </ng-container>
-        </mat-chip-list>
-      </div>
-      <div class="col-md-4">
-        <app-dropdown
-          [options]="list2"
-          (selectionChange)="onSelectionChange2($event)"
-        >
-        </app-dropdown>
-        <mat-chip-list aria-label="Fish selection">
-          <ng-container *ngFor="let item of selectedOptions2">
-            <mat-chip>{{ item }}</mat-chip>
-          </ng-container>
-        </mat-chip-list>
-      </div>
-      <div class="col-md-4">
-        <app-dropdown
-          [options]="list3"
-          (selectionChange)="onSelectionChange3($event)"
-        >
-        </app-dropdown>
-        <mat-chip-list aria-label="Fish selection">
-          <ng-container *ngFor="let item of selectedOptions3">
-            <mat-chip>{{ item }}</mat-chip>
+            <mat-chip>{{ item?.name }}</mat-chip>
           </ng-container>
         </mat-chip-list>
       </div>
