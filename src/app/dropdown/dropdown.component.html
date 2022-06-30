@@ -13,6 +13,7 @@
 
     <mat-chip
       class="mat-chip-custom"
+      [ngClass]="{ 'mat-chip-custom-active': isDropdownActive }"
       (click)="onLabelClick()"
       *ngIf="isBadgeDropdown"
     >
@@ -27,7 +28,11 @@
       </button></mat-chip
     >
 
-    <div class="dropdown-panel" *ngIf="isDropdownActive">
+    <div
+      class="dropdown-panel"
+      [ngClass]="{ 'm-t-5': isBadgeDropdown }"
+      *ngIf="isDropdownActive"
+    >
       <ng-container *ngFor="let optionItem of options">
         <div
           matRipple

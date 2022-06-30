@@ -1,4 +1,4 @@
-$primary-color-bg: #e6f2ff;
+$primary-color-bg: #c4d9f1;
 $primary-color: #0a84ff;
 $border-color: #e1e4e8;
 
@@ -18,6 +18,9 @@ $seconday-color: #f2f5f8;
   background: $seconday-color;
   border-radius: 5px;
   padding: 8px !important;
+}
+.mat-chip-custom-active {
+  background: $primary-color-bg;
 }
 
 .white-icon {
@@ -201,4 +204,8 @@ input[type="checkbox"]:disabled {
 
 .animate180 {
   transform: rotate(-180deg);
+}
+
+.m-t-5 {
+  margin-top: 5px;
 }
