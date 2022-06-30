@@ -1,4 +1,4 @@
-$seconday-color: #f2f5f8;
+@import "../../variables";
 
 .form-control-spacing {
   margin: 10px 0px;
@@ -13,14 +13,6 @@ $seconday-color: #f2f5f8;
   background: $seconday-color;
   border-radius: 5px;
   padding: 8px !important;
-}
-
-.white-icon {
-  color: black;
-}
-/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
-.white-icon svg {
-  fill: black;
 }
 
 .user-select-none {

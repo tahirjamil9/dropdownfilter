@@ -1,12 +1,7 @@
 @import "../../variables";
 
-.form-control-spacing {
-  margin: 10px 0px;
-}
-
 .mat-chip-button-custom {
   background: white !important;
-  padding-top: 1px !important;
 }
 
 .mat-chip-custom {
@@ -16,14 +11,6 @@
 }
 .mat-chip-custom-active {
   background: $primary-color-bg;
-}
-
-.white-icon {
-  color: black;
-}
-/* Note: If you're using an SVG icon, you should make the class target the `<svg>` element */
-.white-icon svg {
-  fill: black;
 }
 
 .user-select-none {
@@ -92,7 +79,7 @@
 }
 
 ::ng-deep .mat-checkbox .mat-checkbox-frame {
-  border-color: $border-color;
+  border-color: $border-color-checkbox;
 }
 
 ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
@@ -151,8 +138,8 @@ input[type="checkbox"] {
   margin: 0;
 
   font: inherit;
-  color: $border-color;
-  border: 0.15em solid $border-color;
+  color: $border-color-checkbox;
+  border: 0.15em solid $border-color-checkbox;
   width: 1.15em;
   height: 1.15em;
   border-radius: 0.15em;
