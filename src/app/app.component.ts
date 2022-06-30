@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   list1: { name: string; checked: boolean }[] = [
     {
-      name: 'value 01',
+      name: 'Yes value 01',
       checked: false,
     },
     {
@@ -46,7 +46,6 @@ export class AppComponent {
   ngOnInIt() {}
 
   onSelectionChange1(value: any) {
-    value.checked = !value.checked;
     let index = this.list1.findIndex((item) => item.name === value.name);
     this.list1[index].checked = value.checked;
   }

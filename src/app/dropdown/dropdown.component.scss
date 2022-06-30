@@ -1,5 +1,5 @@
-$primary-color-bg: rgba(10, 132, 255, 0.1);
-$primary-color: #4389e6;
+$primary-color-bg: #e6f2ff;
+$primary-color: #0a84ff;
 $border-color: #e1e4e8;
 
 .form-field-spacing {
@@ -45,7 +45,8 @@ $border-color: #e1e4e8;
 }
 
 .option-label {
-  margin-left: 15px;
+  margin-left: 5px;
+  user-select: none;
 }
 
 .dropdown-panel {
@@ -64,4 +65,102 @@ $border-color: #e1e4e8;
 
 ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
   background-color: $primary-color !important;
+}
+
+.checkbox-option-custom {
+  padding: 10px 10px 5px 10px;
+  cursor: pointer;
+}
+
+// Learn about this technique:
+// @link https://moderncss.dev/pure-css-custom-checkbox-style/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+form {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+
+.form-control-custom {
+  font-size: 1em;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.form-control-custom + .form-control-custom {
+  margin-top: 1em;
+}
+
+.form-control-custom--disabled {
+  color: #959495;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: white;
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: $border-color;
+  border: 0.15em solid $border-color;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+  margin-top: 1px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em $primary-color;
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+input[type="checkbox"]:checked {
+  color: $primary-color;
+  border: 0.15em solid $primary-color;
+}
+
+input[type="checkbox"]:focus {
+  outline: transparent;
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+  $primary-color: #959495;
+  color: #959495;
+  cursor: not-allowed;
 }

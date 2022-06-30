@@ -13,14 +13,32 @@
 
     <div class="dropdown-panel" *ngIf="isDropdownActive">
       <ng-container *ngFor="let optionItem of options">
-        <div matRipple class="option-item display-flex align-item-center">
-          <div class="checkbox">
-            <mat-checkbox
-              [checked]="optionItem?.checked"
-              (change)="onOptionSelect(optionItem)"
-              class="example-margin"
-              >{{ optionItem.name }}</mat-checkbox
-            >
+        <div
+          matRipple
+          (click)="onOptionSelect(optionItem)"
+          class="option-item display-flex align-item-center"
+        >
+          <div class="checkbox-option-custom">
+            <div class="display-flex align-item-center">
+              <label
+                (click)="onOptionSelect(optionItem)"
+                class="form-control-custom display-flex align-item-center"
+              >
+                <input
+                  (click)="onOptionSelect(optionItem)"
+                  type="checkbox"
+                  name="checkbox-checked"
+                  [checked]="optionItem.checked"
+                />
+                <div class="option-label">
+                  {{ optionItem.name }}
+                </div>
+              </label>
+            </div>
+
+            <!-- <mat-checkbox [checked]="optionItem?.checked" #checkbox>{{
+              optionItem.name
+            }}</mat-checkbox> -->
           </div>
         </div>
       </ng-container>

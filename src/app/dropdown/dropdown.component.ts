@@ -40,6 +40,7 @@ export class DropdownComponent implements OnInit {
   ngOnInit() {}
 
   onOptionSelect(item: any) {
+    item.checked = !item.checked;
     this.selectionChange.emit(item);
   }
 
