@@ -1,67 +1,87 @@
-<div class="form-field-spacing display-flex">
-  <div class="flex1">
-    <div
-      *ngIf="!isBadgeDropdown"
-      (click)="onLabelClick()"
-      [ngClass]="{ 'dropdown-label-active': isDropdownActive }"
-      class="dropdown-label form-field display-flex align-item-center"
-    >
-      <div class="flex1">{{ label }}</div>
-      <div class="checkbox-custom">
-        <mat-icon>arrow_drop_down</mat-icon>
+<div class="form-control-spacing">
+  <div class="form-field-spacing display-flex">
+    <div class="flex1">
+      <div
+        *ngIf="!isBadgeDropdown"
+        (click)="onLabelClick()"
+        [ngClass]="{ 'dropdown-label-active': isDropdownActive }"
+        class="dropdown-label form-field display-flex align-item-center"
+      >
+        <div class="flex1">{{ label }}</div>
+        <div class="checkbox-custom">
+          <mat-icon>arrow_drop_down</mat-icon>
+        </div>
       </div>
-    </div>
 
-    <mat-chip
-      class="mat-chip-custom"
-      [ngClass]="{ 'mat-chip-custom-active': isDropdownActive }"
-      (click)="onLabelClick()"
-      *ngIf="isBadgeDropdown"
-    >
-      <div class="user-select-none">{{ label }}</div>
-      <button matChipRemove class="mat-chip-button-custom">
-        <mat-icon
-          (click)="onLabelClick()"
-          [ngClass]="{
-            animate180: isDropdownActive,
-            animate0: !isDropdownActive
-          }"
-          >expand_more</mat-icon
-        >
-      </button></mat-chip
-    >
+      <mat-chip
+        class="mat-chip-custom"
+        [ngClass]="{ 'mat-chip-custom-active': isDropdownActive }"
+        (click)="onLabelClick()"
+        *ngIf="isBadgeDropdown"
+      >
+        <div class="user-select-none">{{ label }}</div>
+        <button matChipRemove class="mat-chip-button-custom">
+          <mat-icon
+            (click)="onLabelClick()"
+            [ngClass]="{
+              animate180: isDropdownActive,
+              animate0: !isDropdownActive
+            }"
+            >{{ iconLabel }}</mat-icon
+          >
+        </button></mat-chip
+      >
 
-    <div
-      class="dropdown-panel"
-      [ngClass]="{ 'm-t-5': isBadgeDropdown }"
-      *ngIf="isDropdownActive"
-    >
-      <ng-container *ngFor="let optionItem of options">
-        <div
-          matRipple
-          (click)="onOptionSelect(optionItem)"
-          class="option-item display-flex align-item-center"
-        >
-          <div class="checkbox-option-custom">
-            <div class="display-flex align-item-center">
-              <label
-                (click)="onOptionSelect(optionItem)"
-                class="form-control-custom display-flex align-item-center"
-              >
-                <input
+      <div
+        class="dropdown-panel"
+        [ngClass]="{ 'm-t-5': isBadgeDropdown }"
+        *ngIf="isDropdownActive"
+      >
+        <ng-container *ngFor="let optionItem of options">
+          <div
+            matRipple
+            (click)="onOptionSelect(optionItem)"
+            class="option-item display-flex align-item-center"
+          >
+            <div class="checkbox-option-custom">
+              <div class="display-flex align-item-center">
+                <label
                   (click)="onOptionSelect(optionItem)"
-                  type="checkbox"
-                  name="checkbox-checked"
-                  [checked]="optionItem.checked"
-                />
-                <div class="option-label">
-                  {{ optionItem.name }}
-                </div>
-              </label>
+                  class="form-control-custom display-flex align-item-center"
+                >
+                  <input
+                    (click)="onOptionSelect(optionItem)"
+                    type="checkbox"
+                    name="checkbox-checked"
+                    [checked]="optionItem.checked"
+                  />
+                  <div class="option-label">
+                    {{ optionItem.name }}
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
-        </div>
-      </ng-container>
+        </ng-container>
+      </div>
     </div>
+  </div>
+  <div class="form-control-spacing">
+    <mat-chip-list>
+      <ng-container *ngFor="let item of options">
+        <mat-chip
+          *ngIf="item.checked"
+          class="mat-chip-custom"
+          (removed)="removeItemFromList(item)"
+        >
+          <div class="user-select-none">
+            {{ item?.name }}
+          </div>
+          <button matChipRemove class="mat-chip-button-custom">
+            <mat-icon>close</mat-icon>
+          </button></mat-chip
+        >
+      </ng-container>
+    </mat-chip-list>
   </div>
 </div>

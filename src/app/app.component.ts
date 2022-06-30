@@ -29,11 +29,45 @@ export class AppComponent {
     },
     {
       name: 'value 06',
-      checked: true,
+      checked: false,
     },
     {
       name: 'value 07',
-      checked: true,
+      checked: false,
+    },
+    {
+      name: 'value 08',
+      checked: false,
+    },
+  ];
+  list2: { name: string; checked: boolean }[] = [
+    {
+      name: 'Yes value 01',
+      checked: false,
+    },
+    {
+      name: 'value 02',
+      checked: false,
+    },
+    {
+      name: 'value 03',
+      checked: false,
+    },
+    {
+      name: 'value 04',
+      checked: false,
+    },
+    {
+      name: 'value 05',
+      checked: false,
+    },
+    {
+      name: 'value 06',
+      checked: false,
+    },
+    {
+      name: 'value 07',
+      checked: false,
     },
     {
       name: 'value 08',

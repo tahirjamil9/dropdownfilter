@@ -5,24 +5,13 @@
   <div style="margin: 1vh 0">
     <div class="row">
       <div class="col-md-4">
-        <app-dropdown
-          [options]="list1"
-          (selectionChange)="onSelectionChange1($event)"
-        >
-        </app-dropdown>
-        <app-chip-list
-          [options]="list1"
-          (remove)="removeItemFromList($event)"
-        ></app-chip-list>
-        <app-dropdown
-          [options]="list1"
-          [isBadgeDropdown]="true"
-          (selectionChange)="onSelectionChange1($event)"
-        >
+        <app-dropdown [options]="list1"> </app-dropdown>
+
+        <app-dropdown [options]="list2" [isBadgeDropdown]="true">
         </app-dropdown>
       </div>
     </div>
-    <!-- <div class="mobile-bottom-stick">
+    <!-- <div clalist2ss="mobile-bottom-stick">
       <div class="row">
         <div class="col-md-4">
           <app-dropdown
