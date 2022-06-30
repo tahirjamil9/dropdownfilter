@@ -2,6 +2,7 @@
   <div class="flex1">
     <div
       *ngIf="!isBadgeDropdown"
+      (click)="onLabelClick()"
       [ngClass]="{ 'dropdown-label-active': isDropdownActive }"
       class="dropdown-label form-field display-flex align-item-center"
     >
