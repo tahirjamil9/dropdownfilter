@@ -186,6 +186,12 @@ input[type="checkbox"]:disabled {
 
 .animate180 {
   transform: rotate(-180deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.animate0 {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in-out;
 }
 
 .m-t-5 {

@@ -22,7 +22,10 @@
       <button matChipRemove class="mat-chip-button-custom">
         <mat-icon
           (click)="onLabelClick()"
-          [ngClass]="{ animate180: isDropdownActive }"
+          [ngClass]="{
+            animate180: isDropdownActive,
+            animate0: !isDropdownActive
+          }"
           >expand_more</mat-icon
         >
       </button></mat-chip
