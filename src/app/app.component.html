@@ -10,14 +10,39 @@
           (selectionChange)="onSelectionChange1($event)"
         >
         </app-dropdown>
-        <mat-chip-list aria-label="Fish selection">
-          <ng-container *ngFor="let item of list1">
-            <mat-chip *ngIf="item.checked" (click)="removeItemFromList(item)">{{
-              item?.name
-            }}</mat-chip>
-          </ng-container>
-        </mat-chip-list>
+        <app-chip-list
+          [options]="list1"
+          (remove)="removeItemFromList($event)"
+        ></app-chip-list>
+        <app-dropdown
+          [options]="list1"
+          [isBadgeDropdown]="true"
+          (selectionChange)="onSelectionChange1($event)"
+        >
+        </app-dropdown>
       </div>
     </div>
+    <!-- <div class="mobile-bottom-stick">
+      <div class="row">
+        <div class="col-md-4">
+          <app-dropdown
+            [options]="list1"
+            (selectionChange)="onSelectionChange1($event)"
+          >
+          </app-dropdown>
+          <mat-chip-list aria-label="Fish selection">
+            <ng-container *ngFor="let item of list1">
+              <mat-chip
+                *ngIf="item.checked"
+                (removed)="removeItemFromList(item)"
+                >{{ item?.name }}
+              <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button></mat-chip>
+            </ng-container>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div> -->
   </div>
 </div>

@@ -1,15 +1,31 @@
 <div class="form-field-spacing display-flex">
   <div class="flex1">
     <div
+      *ngIf="!isBadgeDropdown"
       [ngClass]="{ 'dropdown-label-active': isDropdownActive }"
       class="dropdown-label form-field display-flex align-item-center"
-      (click)="onLabelClick()"
     >
       <div class="flex1">{{ label }}</div>
       <div class="checkbox-custom">
         <mat-icon>arrow_drop_down</mat-icon>
       </div>
     </div>
+
+    <mat-chip
+      class="mat-chip-custom"
+      (click)="onLabelClick()"
+      *ngIf="isBadgeDropdown"
+    >
+      <div class="user-select-none">{{ label }}</div>
+      <button matChipRemove class="mat-chip-button-custom">
+        <mat-icon
+          (click)="onLabelClick()"
+          class="white-icon"
+          [ngClass]="{ animate180: isDropdownActive }"
+          >expand_more</mat-icon
+        >
+      </button></mat-chip
+    >
 
     <div class="dropdown-panel" *ngIf="isDropdownActive">
       <ng-container *ngFor="let optionItem of options">
@@ -35,10 +51,6 @@
                 </div>
               </label>
             </div>
-
-            <!-- <mat-checkbox [checked]="optionItem?.checked" #checkbox>{{
-              optionItem.name
-            }}</mat-checkbox> -->
           </div>
         </div>
       </ng-container>

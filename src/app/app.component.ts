@@ -29,11 +29,11 @@ export class AppComponent {
     },
     {
       name: 'value 06',
-      checked: false,
+      checked: true,
     },
     {
       name: 'value 07',
-      checked: false,
+      checked: true,
     },
     {
       name: 'value 08',

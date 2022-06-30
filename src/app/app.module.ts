@@ -13,9 +13,10 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
+import { ChipListComponent } from './chip-list/chip-list.component';
 
 @NgModule({
-  declarations: [AppComponent, DropdownComponent],
+  declarations: [AppComponent, DropdownComponent, ChipListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
