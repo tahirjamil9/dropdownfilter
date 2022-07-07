@@ -1,37 +1,13 @@
 <div style="padding: 1vw 2vw">
-  <h1>Filters</h1>
-  <p>Update dropdown options based on filters we select</p>
-
-  <div style="margin: 1vh 0">
-    <div class="row">
-      <div class="col-md-4">
+  <div style="display: flex;">
+    <div class="row" style="flex:1">
+      <div class="col-md-6">
         <app-dropdown [options]="list1"> </app-dropdown>
-
-        <app-dropdown [options]="list2" [isBadgeDropdown]="true">
-        </app-dropdown>
       </div>
+      <div class="col-md-6"></div>
     </div>
-    <!-- <div clalist2ss="mobile-bottom-stick">
-      <div class="row">
-        <div class="col-md-4">
-          <app-dropdown
-            [options]="list1"
-            (selectionChange)="onSelectionChange1($event)"
-          >
-          </app-dropdown>
-          <mat-chip-list aria-label="Fish selection">
-            <ng-container *ngFor="let item of list1">
-              <mat-chip
-                *ngIf="item.checked"
-                (removed)="removeItemFromList(item)"
-                >{{ item?.name }}
-              <button matChipRemove>
-        <mat-icon>cancel</mat-icon>
-      </button></mat-chip>
-            </ng-container>
-          </mat-chip-list>
-        </div>
-      </div>
-    </div> -->
+    <button>sdfjsjdfklsjfklsj</button>
   </div>
 </div>
+
+<app-chips [options]="list1"> </app-chips>

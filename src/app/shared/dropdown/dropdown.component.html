@@ -66,22 +66,5 @@
       </div>
     </div>
   </div>
-  <div class="form-control-spacing">
-    <mat-chip-list>
-      <ng-container *ngFor="let item of options">
-        <mat-chip
-          *ngIf="item.checked"
-          class="mat-chip-custom"
-          (removed)="removeItemFromList(item)"
-        >
-          <div class="user-select-none">
-            {{ item?.name }}
-          </div>
-          <button matChipRemove class="mat-chip-button-custom">
-            <mat-icon>close</mat-icon>
-          </button></mat-chip
-        >
-      </ng-container>
-    </mat-chip-list>
-  </div>
+
 </div>

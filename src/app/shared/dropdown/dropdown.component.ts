@@ -19,11 +19,6 @@ export class DropdownComponent implements OnInit {
   @Input() options: { name: string; checked: boolean }[] = [];
   @Output() selectionChange = new EventEmitter<any>();
 
-  removeItemFromList(value: any) {
-    let index = this.options.findIndex((item) => item.name === value.name);
-    this.options[index].checked = false;
-  }
-
   isDropdownActive = false;
 
   inside = false;
